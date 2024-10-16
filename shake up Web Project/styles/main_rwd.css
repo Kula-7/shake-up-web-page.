@@ -1,0 +1,316 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 1024px; /* Limit the max width to 1024px */
+    width: 95%; /* Occupy 95% of the browser window */
+    margin: 0 auto;
+    border: 2px solid steelblue;
+    box-shadow: 0 0 10px black;
+    padding: 0em; /* Convert padding to em */
+}
+
+header {
+    text-align: left;
+    border-bottom: 2px solid steelblue;
+    background: linear-gradient(to bottom, white, lightsteelblue);
+    padding-bottom: 0.5em; /* Converted to em */
+}
+
+header .logo {
+    float: left;
+    width: 100%;
+    max-width: 140px;
+    min-width: 70px;
+    margin-right: 1em; 
+}
+
+header h1 {
+    color: steelblue;
+    text-shadow: 0.3em 0.3em 0.6em steelblue; 
+    font-style: italic;
+}
+
+nav ul {
+    list-style: none;
+    background: steelblue;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 1.25em 3em; 
+    color: aliceblue;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1em;
+}
+
+nav ul li ul.dropdown li {
+    display: block;
+}
+
+nav ul li ul.dropdown {
+    width: 100%;
+    background: steelblue;
+    position: absolute;
+    z-index: 9999;
+    display: none;
+    padding: 0;
+}
+
+nav ul li ul.dropdown a {
+    padding: 1em;
+}
+
+nav ul li a:hover {
+    background: lightsteelblue;
+}
+
+nav ul li:hover ul.dropdown {
+    display: block;
+}
+nav ul li a.active {
+    background-color: lightsteelblue;
+    color: darkblue;
+    font-weight: bold;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2em; 
+    grid-template-rows: auto;
+    justify-content: center;
+    align-content: center;
+}
+
+aside {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    padding: 1.25em; 
+}
+
+aside h2 {
+    color: maroon;
+}
+
+aside ul a {
+    color: steelblue;
+    padding: 0.6em;
+    text-decoration: none;
+}
+
+.offer a {
+    color: maroon;
+    text-decoration: none;
+    padding: 0.3em;
+}
+.offer img {
+    padding: 0.2em;
+}
+
+.introduction {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    text-align: left;
+    padding: 1.25em; 
+}
+
+.rightside {
+    grid-column: 3 / 3;
+    grid-row: 1;
+    padding: 1.25em; 
+    text-align: left;
+}
+
+.rightside h2 {
+    color: maroon;
+}
+
+footer {
+    text-align: center;
+    background-color: steelblue;
+    color: white;
+    padding: 0.5em;
+    font-size: 0.8em;
+}
+
+
+@media (max-width: 900px) {
+    body {
+        box-shadow: none; 
+        font-size: 90%; 
+    }
+
+    header h1 {
+        font-size: 2em; 
+    }
+
+    main {
+        grid-template-columns: 1fr; 
+    }
+
+    aside, .rightside, .introduction {
+        padding: 1em; 
+    }
+}
+
+@media (max-width: 767px) {
+    nav ul {
+        display: none; 
+    }
+
+    .slicknav_menu {
+        display: block;
+        background-color: steelblue;
+        padding: 3px;
+    }
+
+    .slicknav_nav ul, .slicknav_nav a {
+        background-color: steelblue;
+        color: white;
+        padding: 10px;
+    }
+
+    .slicknav_nav a:hover {
+        background-color: lightsteelblue;
+    }
+
+    header h1 {
+        font-size: 200%; 
+    }
+
+    main {
+        display: block; 
+    }
+}
+
+@media (max-width: 479px) {
+    header h1, header h2 {
+        font-size: 1.5em; 
+    }
+
+    main p, main h3 {
+        font-size: 0.9em; 
+    }
+
+    aside, .rightside, .introduction {
+        padding: 0.75em; 
+    }
+}
+
+.images {
+    float: right;
+    border: 0.1em solid;
+    margin-left: 0.5em;
+}
+
+.tips {
+    color: maroon;
+}
+
+main.stress {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 2em; 
+    grid-template-rows: auto;
+    justify-content: center;
+    align-content: center;
+}
+
+section.stress_sect {
+    grid-column: 2/2;
+    grid-row: 1;
+    padding: 1.5em 2em;
+    margin-right: 0.1em;
+}
+
+section.stress_sect h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+main.calories {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 2em; 
+    grid-template-rows: auto;
+    justify-content: center;
+    align-content: center;
+}
+
+section.calories_sect {
+    text-align: center;
+}
+
+section.calories_sect {
+    grid-column: 2/2;
+    grid-row: 1;
+    padding: 1.5em 2em;
+    margin-right: 0.1em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+    color: maroon;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+main.strength {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 2em; 
+    grid-template-rows: auto;
+    justify-content: center;
+    align-content: center;
+}
+
+section.strength_sect {
+    grid-column: 2/2;
+    grid-row: 1;
+    padding: 1.5em 2em;
+    margin-right: 0.1em;
+}
+
+section.strength_sect h3 {
+    color: maroon;
+}
+
+main.cardio {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 2em; 
+    grid-template-rows: auto;
+    justify-content: center;
+    align-content: center;
+}
+
+section.cardio_sect {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    text-align: left;
+    padding: 1.25em; 
+}
+section.cardio_sect h2 {
+    color: maroon;
+}
+
